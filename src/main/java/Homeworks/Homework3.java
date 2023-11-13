@@ -34,15 +34,15 @@ public class Homework3 {
         if (number1 >= number2 && number1 >= number3) {
             System.out.printf("%d is the largest number.\n", number1);
             if (number1 == number2 && number1 == number3)
-               System.out.printf("All numbers are equal.\n");
+               System.out.println("All numbers are equal.");
         } else if (number2 >= number1 && number2 >= number3) {
             System.out.printf("%d is the largest number.\n", number2);
             if (number2 == number1 && number2 == number3)
-                System.out.printf("All numbers are equal.\n");
+                System.out.println("All numbers are equal.");
         } else if (number3 >= number1 && number3 >= number2) {
             System.out.printf("%d is the largest number.\n", number3);
             if (number3 == number1 && number3 == number2)
-                System.out.printf("All numbers are equal.\n");
+                System.out.println("All numbers are equal.");
 
         }
 
