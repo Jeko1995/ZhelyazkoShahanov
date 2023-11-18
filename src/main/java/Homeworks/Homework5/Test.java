@@ -17,8 +17,6 @@ public class Test {
                 2.23f, "Brus", (byte) 2, 13.28f, true, true);
 
 
-
-
         Lusi.printData();
 
         Lusi.makeSomeNoise();
