@@ -16,7 +16,6 @@ public class Test {
         Parrot Brus = new Parrot("Ara", "male", (byte) 12, "blue",
                 2.23f, "Brus", (byte) 2, 13.28f, true, true);
 
-
         Lusi.printData();
 
         Lusi.makeSomeNoise();
