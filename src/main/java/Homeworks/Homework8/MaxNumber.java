@@ -1,5 +1,7 @@
 package Homeworks.Homework8;
-
+/*
+Ъпдейтнете задачата с намирането на максималното измежду 3 числа да използва Math класа.
+ */
 import java.util.Scanner;
 
 public class MaxNumber {

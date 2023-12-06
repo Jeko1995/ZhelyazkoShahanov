@@ -1,5 +1,7 @@
 package Homeworks.Homework8;
-
+/*
+Напишете метод който намира лице на триъгълник(използвайки Math класа)
+ */
 import java.util.Locale;
 import java.util.Scanner;
 
