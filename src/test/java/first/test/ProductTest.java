@@ -25,21 +25,11 @@ public class ProductTest extends TestUtil {
         WebElement loginBtn = driver.findElement(By.id("login-button"));
         loginBtn.click();
 
-        WebElement burgerMenuBtn = driver.findElement(By.id("react-burger-menu-btn"));
-        burgerMenuBtn.click();
-
         WebElement itemToBeAdded = driver.findElement(By.id(BASE_PRODUCT_ID + itemName));
         itemToBeAdded.click();
 
         WebElement shoppingCardBadge = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
 
         Assert.assertEquals(shoppingCardBadge.getText(), "1");
-    }
-    @DataProvider(name = "items list")
-    public  Object[][] getItems(){
-        return new Object[][]{
-                {"backpack"},
-                {"bolt-t-shirt"}
-        };
     }
 }
