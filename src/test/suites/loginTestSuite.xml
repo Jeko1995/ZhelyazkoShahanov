@@ -3,12 +3,12 @@
 <suite name="Login Tests" thread-count="2" parallel="tests" annotations="JDK" verbose="1">
     <test name="mix">
         <classes>
-            <class name="first.test.ProductTest"/>
+            <class name="tests.ProductTest"/>
         </classes>
     </test>
     <test name="mix2">
         <classes>
-            <class name="first.test.UnSuccessfulLogin"/>
+            <class name="tests.UnSuccessfulLogin"/>
         </classes>
     </test>
 </suite>

@@ -23,7 +23,8 @@ public class TestUtil extends DataProviders{
     public void setupDriverAndOpenTargetURL() {
         readConfig("src/test/resources/config.properties");
         setupDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.from(Duration.ofSeconds(implicitWait)));
+        //Implicit wait is not necessary for now
+        //driver.manage().timeouts().implicitlyWait(Duration.from(Duration.ofSeconds(implicitWait)));
         driver.get(targetURL);
     }
 

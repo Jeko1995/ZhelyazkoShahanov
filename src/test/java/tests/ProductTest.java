@@ -1,4 +1,4 @@
-package first.test;
+package tests;
 
 import base.TestUtil;
 import org.openqa.selenium.By;
@@ -6,12 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.LoginPage;
+import pages.ProductPage;
 
 public class ProductTest extends TestUtil {
-    private final static String BASE_PRODUCT_ID = "add-to-cart-sauce-labs-";
 
-    @Test (dataProvider = "items list")
-    public void AddProductToCart(String itemName){
+    @Test
+    public void AddItemToCart(){
+        LoginPage loginPage = new LoginPage(driver);
+        ProductPage productPage = loginPage.login("standard_user", "secret_sauce");
+
+        productPage.addItemToTheCart("bike-light");
+
+        Assert.assertEquals(productPage.getItemsInCart(), 1, "Only one item");
+
+
+/*
         WebElement userNameInput = driver.findElement(By.id("user-name"));
         userNameInput.click();
         userNameInput.clear();
@@ -31,5 +41,7 @@ public class ProductTest extends TestUtil {
         WebElement shoppingCardBadge = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
 
         Assert.assertEquals(shoppingCardBadge.getText(), "1");
+
+ */
     }
 }

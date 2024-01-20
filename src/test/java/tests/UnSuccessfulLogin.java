@@ -1,4 +1,4 @@
-package first.test;
+package tests;
 
 import base.TestUtil;
 import org.openqa.selenium.By;
