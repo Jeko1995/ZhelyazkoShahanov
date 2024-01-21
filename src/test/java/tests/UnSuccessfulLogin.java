@@ -5,27 +5,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.LoginPage;
 
 public class UnSuccessfulLogin extends TestUtil {
 
     @Test (dataProvider = "invalidUsers")
     public void UnsuccessfulLoginTest(String username, String password){
-        WebElement userNameInput = driver.findElement(By.id("user-name"));
-        userNameInput.click();
-        userNameInput.clear();
-        userNameInput.sendKeys(username);
 
-        WebElement passwordInput = driver.findElement(By.id("password"));
-        passwordInput.click();
-        passwordInput.clear();
-        passwordInput.sendKeys(password);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login(username, password);
 
-        WebElement loginBtn = driver.findElement(By.id("login-button"));
-        loginBtn.click();
-
-        WebElement closeErrorMsgBtn = driver.findElement(By.cssSelector(".error-button"));
-
-        Assert.assertTrue(closeErrorMsgBtn.isDisplayed());
+        Assert.assertTrue(loginPage.isLoginErrorMsgDisplayed());
     }
-
 }

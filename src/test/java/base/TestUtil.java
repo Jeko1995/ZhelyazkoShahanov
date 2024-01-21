@@ -30,7 +30,10 @@ public class TestUtil extends DataProviders{
 
     @AfterMethod
     public void tearDown(){
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
     }
 
     private void readConfig(String pathToFile){
@@ -47,15 +50,17 @@ public class TestUtil extends DataProviders{
     }
 
     private void setupDriver(){
-        switch (browser){
-            case "safari":
-                driver = setupSafariDriver();
-                break;
-            case "firefox":
-                driver = setupFireFoxDriver();
-                break;
-            default:
-                driver = setupChromeDriver();
+        if (driver == null) {
+            switch (browser) {
+                case "safari":
+                    driver = setupSafariDriver();
+                    break;
+                case "firefox":
+                    driver = setupFireFoxDriver();
+                    break;
+                default:
+                    driver = setupChromeDriver();
+            }
         }
     }
 

@@ -3,7 +3,7 @@
 <suite name="Login Tests" thread-count="2" parallel="tests" annotations="JDK" verbose="1">
     <test name="mix">
         <classes>
-            <class name="tests.ProductTest"/>
+            <class name="tests.AddProduct"/>
         </classes>
     </test>
     <test name="mix2">
