@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<suite name="Login Tests" thread-count="2" parallel="tests" annotations="JDK" verbose="1">
-    <test name="mix">
+<suite name="All Tests" thread-count="3" parallel="tests" annotations="JDK" verbose="1">
+    <test name="successfulLogin">
         <classes>
-            <class name="tests.AddProduct"/>
+            <class name="tests.SuccessfulLogin"/>
+            <class name="tests.ProblemUserLogin"/>
         </classes>
     </test>
-    <test name="mix2">
+    <test name="unSuccessfulLogin">
         <classes>
             <class name="tests.UnSuccessfulLogin"/>
+        </classes>
+    </test>
+    <test name="addProductsAndCheckout">
+        <classes>
+            <class name="tests.AddProduct"/>
+            <class name="tests.CheckoutProducts"/>
         </classes>
     </test>
 </suite>

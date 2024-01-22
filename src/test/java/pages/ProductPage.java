@@ -1,11 +1,11 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -38,10 +38,10 @@ public class ProductPage extends BasePage {
 
     //methods i.e. actions on the page
     public boolean isAt() {
-        burgerMenuBtn.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         try {
+            burgerMenuBtn.click();
             wait.until(ExpectedConditions.visibilityOf(logoutBtn));
 
             return true;
@@ -61,8 +61,8 @@ public class ProductPage extends BasePage {
         return Integer.parseInt(shoppingCartBadge.getText());
     }
 
-    public CartPage clickCardBtn() {
-    shoppingCartBtn.click();
-        return new CartPage(driver);
+    public CheckoutCartPage clickCardBtn() {
+        shoppingCartBtn.click();
+        return new CheckoutCartPage(driver);
     }
 }
