@@ -27,7 +27,8 @@ public class CheckoutYourInformationPage extends BasePage{
     }
 
     //methods i.e. actions on the page
-    public CheckoutOverviewPage FillInDataAndContinue(String FirstName, String LastName, String Postalcode){
+    //Fills in the user's information and continues to the next page
+    public CheckoutOverviewPage fillInDataAndContinue(String FirstName, String LastName, String Postalcode){
         FirstNameInput.click();
         FirstNameInput.clear();
         FirstNameInput.sendKeys(FirstName);

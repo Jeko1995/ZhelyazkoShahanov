@@ -18,7 +18,8 @@ public class CheckoutOverviewPage extends BasePage{
     }
 
     //methods i.e. actions on the page
-    public CheckoutCompletePage ClickFinishBtn(){
+    //Clicks the "Finish" button on the Checkout Overview page
+    public CheckoutCompletePage clickFinishBtn(){
         FinishBtn.click();
 
         return new CheckoutCompletePage(driver);

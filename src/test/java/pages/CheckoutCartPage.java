@@ -5,21 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CheckoutCartPage extends BasePage{
+public class CheckoutCartPage extends BasePage {
 
-    //elements
+    // Elements
     @FindBy(id = "checkout")
-    private WebElement CheckoutBtn;
+    private WebElement checkoutBtn;
 
-    //constructor
+    // Constructor
     public CheckoutCartPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    //methods i.e. actions on the page
+    // Methods i.e. actions on the page
+    //Clicks the checkout button on the Checkout Cart page
     public CheckoutYourInformationPage clickCheckoutBtn() {
-        CheckoutBtn.click();
+        checkoutBtn.click();
         return new CheckoutYourInformationPage(driver);
     }
 }

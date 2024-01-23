@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +31,7 @@ public class LoginPage extends BasePage {
     }
 
     //methods i.e. actions on the page
+    // Performs login with provided username and password.
     public ProductPage login(String username, String password){
         userNameInput.click();
         userNameInput.clear();
@@ -46,6 +46,7 @@ public class LoginPage extends BasePage {
         return new ProductPage(driver);
     }
 
+    // Checks if the login error message is displayed.
     public boolean isLoginErrorMsgDisplayed(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         try {

@@ -4,8 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -14,7 +12,7 @@ public class ProductPage extends BasePage {
 
     private final static String BASE_PRODUCT_ID = "add-to-cart-sauce-labs-";
 
-    //elements
+    // Elements
     @FindBy(className = "title")
     private WebElement pageTitle;
 
@@ -30,13 +28,14 @@ public class ProductPage extends BasePage {
     @FindBy(className = "shopping_cart_link")
     private WebElement shoppingCartBtn;
 
-    //constructor
+    // Constructor
     public ProductPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    //methods i.e. actions on the page
+    // Methods i.e. actions on the page
+    // Checks if the current page is the Product Page.
     public boolean isAt() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 
@@ -50,17 +49,20 @@ public class ProductPage extends BasePage {
         }
     }
 
+    // Adds an item to the cart by clicking on it.
     public void addItemToTheCart(String itemName) {
         WebElement itemToBeAdded = driver.findElement(By.id(BASE_PRODUCT_ID + itemName));
         itemToBeAdded.click();
     }
 
+    // Gets the number of items in the cart.
     public int getItemsInCart() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.visibilityOf(shoppingCartBadge));
         return Integer.parseInt(shoppingCartBadge.getText());
     }
 
+    // Clicks on the shopping cart button to go to the Checkout Cart Page.
     public CheckoutCartPage clickCardBtn() {
         shoppingCartBtn.click();
         return new CheckoutCartPage(driver);

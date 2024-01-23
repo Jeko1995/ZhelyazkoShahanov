@@ -22,6 +22,7 @@ public class CheckoutCompletePage extends BasePage{
     }
 
     //methods i.e. actions on the page
+    //Checks if the checkout process is complete
     public boolean isCheckoutFinish(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         try {
