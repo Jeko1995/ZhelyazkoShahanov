@@ -20,3 +20,4 @@ public class SuccessfulLogin extends TestUtil {
         Assert.assertTrue(productPage.isAt());
     }
 }
+
